@@ -7,7 +7,7 @@ module.exports = {
   copyright: "© 2019 Dominik Bauernfeind, All rights reserved",
   author: {
     name: "Dominik Bauernfeind",
-    bio: "Self-taught web developer and whisky aficionado",
+    bio: "Professional Developer and Student @FH Hagenberg",
     contacts: {
       github: "https://github.com/dominikb",
       stackoverflow: "https://stackoverflow.com/users/9989613/dominikb?tab=profile",

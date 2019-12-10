@@ -12,6 +12,9 @@ p, .title {
     width: 90%;
 }
 
+.post-list-main div:first-child {
+  margin-top: 1em !important;
+}
 
 
 @media only screen and (max-width: 850px) {

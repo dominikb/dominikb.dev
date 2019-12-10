@@ -21,9 +21,9 @@ How development works, how I have been taught and taught myself to write code, a
 
 Of course, you should always follow the best practices of loose coupling or the use of common patterns, but there simply was no room within this process to test the implemented solution.
 
-And I was pretty confident with this workflow, properly planning ahead my tasks and implementing one small, comprehensible step at a time, that the software I was producing, was of decent quality.
+And I was pretty confident with this workflow, properly planning ahead my tasks and implementing one small, comprehensible step at a time, in order for the software that I was producing to be of decent quality.
 
-It always seemed pretty intimidating to start with testing. There is so much to know about programming by itself, I can’t probably learn everything there is to learn about testing as well.
+It always seemed pretty intimidating to start with automated testing. There is so much to know about programming already, I can’t probably learn everything there is to learn about testing as well.
 
 How do I set up testing at all? What do I test for? What can I do if my implementation uses another class’ function? How do I even prepare the state of my application that I would need, to test a specific scenario?
 
