@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./header/header"
 import "./layout.css"
+import ConsentBanner from "./consent-banner/ConsentBanner"
 
 const Layout = ({ children }) => {
   return (
@@ -71,6 +72,7 @@ const Layout = ({ children }) => {
               </p>
             </footer>
           </div>
+          <ConsentBanner/>
         </>
       )}
     />

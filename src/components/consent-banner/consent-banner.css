@@ -1,0 +1,25 @@
+.hidden { display: none !important; }
+
+.consent-banner {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  width: 100vw;
+  padding: 10px;
+  bottom: 0;
+  background: #eee;
+}
+
+.text {
+  display: inline;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.button {
+ border-radius: 1px;
+}
+
+.button:hover {
+  transform: rotate3d('20px', '0px', '0px');
+}
