@@ -44,7 +44,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	box-shadow: 1px 1px 3px;
-    max-width: 750px;
+	max-width: 1000px;
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;

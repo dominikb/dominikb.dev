@@ -47,7 +47,14 @@ module.exports = {
               showLineNumbers: false,
               noInlineHighlight: false,
             }
-          }, `gatsby-remark-responsive-iframe`,
+          },
+          `gatsby-remark-responsive-iframe`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+            }
+          }
         ],
       },
     },

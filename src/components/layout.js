@@ -46,7 +46,10 @@ const Layout = ({ children }) => {
               paddingTop: 0,
             }}
           >
-            <main className="p-4">{children}</main>
+            <main className="p-4" style={{
+              maxWidth: `2000px`
+            }} 
+            >{children}</main>
             <footer className="text-center">
               <hr />
               <p className="d-inline">
