@@ -30,7 +30,7 @@ But specifying those ssh parameters for every command is tedious. There is a bet
 
 ## Creating an ssh configuration
 
-Running one-off commands using the parameterized ssh command is fine. Problems occured for me when I needed to connect to multiple times or to multiple different servers.
+Running one-off commands using the parameterized ssh command is fine. Problems occurred for me when I needed to connect to multiple times or to multiple different servers.
 
 Always parameterizing the ssh command creates a lot of visual noise and makes it harder to understand what the given line is actually supposed to do.
 
@@ -59,7 +59,7 @@ Deploy:
 
 By using a `before_script` we create a clear visual distinction between the configuration setup and the work that is actually done.
 
-__./ci/setup\_ssh\_connections.sh__
+__./ci/setup\_ssh\_configuration.sh__
 ```bash
 #!/usr/bin/env bash
 
@@ -83,7 +83,7 @@ The `before_script` can be even shorter if we accept a naming convention for tho
 # {PREFIX}_SSH_SERVER {PREFIX}_SSH_USER ...
 ```
 
-With some edits in our `setup_ssh_connection` script we can reduce the `yml` config to this:
+With some edits in our `setup_ssh_configuration` script we can reduce the `yml` config to this:
 
 ````yaml
 # .gitlab.ci.yml
@@ -101,7 +101,7 @@ Deploy:
 
 ````bash
 #!/usr/bin/env bash
-# ./ci/setup\_ssh\_connections.sh
+# ./ci/setup\_ssh\_configuration.sh
 
 set -euo pipefail
 
@@ -127,11 +127,11 @@ One more improvement that can be made is to reuse the ssh connections.
 
 Depending on your CI-Setup you could have multiple scripts that connect to the same host within the same pipeline stage. Now, if your executed commands are all sub-second, the overhead of creating a new ssh session each time can be relatively large.
 
-You can improve upon this by once more extending the `setup_ssh_connection.sh` to add the configuration for reusing previous tcp connections to the same host:
+You can improve upon this by once more extending the `setup_ssh_configuration.sh` to add the configuration for reusing previous TCP connections to the same host:
 
 ````bash
 #!/usr/bin/env bash
-# ./ci/setup\_ssh\_connections.sh
+# ./ci/setup\_ssh\setup_ssh_configuration.sh
 
 set -euo pipefail
 
