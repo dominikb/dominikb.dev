@@ -3,7 +3,7 @@
 .consent-banner {
   display: flex;
   justify-content: center;
-  position: sticky;
+  position: fixed;
   width: 100vw;
   padding: 10px;
   bottom: 0;
