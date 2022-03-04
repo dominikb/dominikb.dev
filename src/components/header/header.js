@@ -12,12 +12,7 @@ import "./header.css"
 const Header = ({ siteTitle, tagline, author, contacts }) => {
 
   return (
-    <header
-      className="head-main"
-      style={{
-        background: `black`
-      }}
-    >
+    <header className="head-main">
       <div className="head-elements"
         style={{
           margin: `0`,
@@ -38,8 +33,10 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
         <SocialLinks contacts={contacts} />
       </div>
       <MobileSocialLinks contacts={contacts} />
-      <MobilePageLinks />
-      <MobileBio author={author} tagline={tagline} />
+      <div style={{ display: 'flex' }}>
+        <MobileBio author={author} tagline={tagline} />
+        <MobilePageLinks />
+      </div>
     </header>
   )
 }

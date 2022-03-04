@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
         paddingTop: 0,
       }}
     >
-      <main className="p-4" style={{
+      <main className="p-2" style={{
         maxWidth: `2000px`
       }}
       >{children}</main>

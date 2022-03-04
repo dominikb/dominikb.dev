@@ -7,8 +7,7 @@ const MobileBio = (props) => {
 
     return (
         <div className="mobile-bio-main">
-            <img src={dominik} style={{ maxHeight: `75px`}} alt="author-pic" />
-            <h4 >{props.author}</h4>
+            <img src={dominik} alt="author-pic" />
         </div>
     )
 }
