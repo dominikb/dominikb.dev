@@ -30,6 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/til`,
+        name: `today I learned`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -85,12 +92,12 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'UA-125820779-1', // leave empty if you want to disable the tracker
+          trackingId: '', // leave empty if you want to disable the tracker
           cookieName: 'g-analytics', // default
           anonymize: true // default
         },
         googleTagManager: {
-          trackingId: 'GTM-579BH2J', // leave empty if you want to disable the tracker
+          trackingId: '', // leave empty if you want to disable the tracker
           cookieName: 'g-tagmanager', // default
           dataLayerName: 'dataLayer', // default
         },

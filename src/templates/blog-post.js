@@ -6,36 +6,10 @@ import "./blog-post.css"
 
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
-import CustomShareBlock from "../components/CustomShareBlock"
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
-  const labels = props.data.site.siteMetadata.labels
-  const siteName = props.data.site.siteMetadata.title
-  const siteUrl = props.data.site.siteMetadata.url
-  const url = `${siteUrl}${props.pageContext.slug}`
   const tags = post.frontmatter.tags
-
-  const getTechTags = tags => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={i}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-            />
-          )
-        }
-      })
-    })
-    return techTags
-  }
 
   return (
     <Layout>
@@ -49,17 +23,14 @@ const BlogPost = props => {
           <SEO title={post.frontmatter.title} />
           <div className="mt-3">
             <h1 className="heading">{post.frontmatter.title}</h1>
-            <div className="d-block">{getTechTags(tags)}</div>
+            <div className="d-block">
+              {tags.map(tag => <TechTag key={tag} tag={tag} />)}
+            </div>
             <br />
             <small>
               <i>Published on </i> {post.frontmatter.date}
             </small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <CustomShareBlock
-              title={post.frontmatter.title}
-              siteName={siteName}
-              url={url}
-            />
           </div>
         </div>
       </div>

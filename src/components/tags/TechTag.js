@@ -1,14 +1,41 @@
 import React from "react"
 import * as FontAwesome from "react-icons/fa"
 import * as Devicons from "react-icons/di"
+import * as SimpleIcon from "react-icons/si"
 
 import "./tags.css"
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
-const TechTag = (props) => {
-    const { tag, tech, name, size, color } = props
-    const str = name;
-    const icon = /^Fa/.test(str) ? React.createElement(FontAwesome[name]) : React.createElement(Devicons[name]);
+const TechTag = (args) => {
+    const { tag } = args;
+
+    const data = useStaticQuery(
+        graphql`
+        query AvailableLabels {
+            site {
+            siteMetadata {
+                labels {
+                tag
+                tech
+                name
+                size
+                color
+                }
+            }
+            }
+        }
+        `
+    )
+
+    const label = data.site.siteMetadata.labels.find(it => it.tag === tag)
+    if (!label) return (<></>);
+
+    const { tech, name, size, color } = label;
+
+    let icon;
+    if (/^Fa/.test(name)) icon = React.createElement(FontAwesome[name]);
+    if (/^Si/.test(name)) icon = React.createElement(SimpleIcon[name]);
+    if (/^Di/.test(name)) icon = React.createElement(Devicons[name])
 
     return (
         <div className="d-inline-block p-1">

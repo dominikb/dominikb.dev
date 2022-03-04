@@ -12,45 +12,22 @@ import TechTag from "../components/tags/TechTag"
 const Tag = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
-  console.log(pageContext.tag)
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
-
-  const getTechTags = tags => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={i}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-            />
-          )
-        }
-      })
-    })
-    return techTags
-  }
+  const tagHeader = `${totalCount} post${totalCount > 1 ? "s" : ""
+    } tagged with "${tag}"`
 
   return (
     <Layout>
       <SEO
         title="Home"
         keywords={[
-          `gatsby`,
+          `php`,
           `javascript`,
-          `react`,
+          `ruby`,
           `web development`,
-          `node.js`,
-          `graphql`,
+          `ci/cd`,
+          `server`
         ]}
       />
       <div className="index-main">
@@ -76,7 +53,9 @@ const Tag = ({ pageContext, data }) => {
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
+                <div className="d-block">
+                  {tags.map(tag => <TechTag key={tag} tag={tag} />)}
+                </div>
               </div>
             )
           })}

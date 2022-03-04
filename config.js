@@ -41,6 +41,20 @@ module.exports = {
       tech: "CI/CD",
       name: "DiTerminal",
       size: 20,
+    },
+    {
+      tag: "ruby",
+      tech: "Ruby",
+      name: "DiRuby",
+      color: "#aa1401",
+      size: 20,
+    },
+    {
+      tag: "rails",
+      tech: "Rails",
+      name: "SiRubyonrails",
+      color: "#d30001",
+      size: 20,
     }
   ],
 }

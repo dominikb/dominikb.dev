@@ -4,8 +4,7 @@ import Bio from "./Bio"
 import "./sidebar.css"
 
 import SocialLinks from "./SocialLinks"
-import TechTags from "./TechTags"
-
+import TechTag from "../tags/TechTag"
 
 const Sidebar = () => {
     return (
@@ -53,10 +52,11 @@ const Sidebar = () => {
                         <SocialLinks contacts={data.site.siteMetadata.contacts} />
                         <div className="page-links">
                             <Link to="/"><span className="text-dark d-block py-1">Blog</span></Link>
+                            <Link to="/til"><span className="text-dark d-block py-1">TIL</span></Link>
                             <Link to="/archive"><span className="text-dark d-block py-1">Archive</span></Link>
                         </div>
                         <div className="tech-tags mt-4">
-                            <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges} />
+                            {data.site.siteMetadata.labels.map(label => <TechTag key={label.tag} tag={label.tag} />)}
                         </div>
                     </div>
                 </>

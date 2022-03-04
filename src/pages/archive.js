@@ -10,28 +10,6 @@ import TechTag from "../components/tags/TechTag"
 
 const ArchivePage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
-  const labels = data.site.siteMetadata.labels
-
-  const getTechTags = tags => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={i}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-            />
-          )
-        }
-      })
-    })
-    return techTags
-  }
 
   return (
     <Layout>
@@ -66,7 +44,9 @@ const ArchivePage = ({ data }) => {
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
+                <div className="d-block">
+                  {tags.map(tag => <TechTag key={tag} tag={tag} />)}
+                </div>
               </div>
             )
           })}
