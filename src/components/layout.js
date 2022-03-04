@@ -11,7 +11,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./header/header"
 import "./layout.css"
-import ConsentBanner from "./consent-banner/ConsentBanner"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(
@@ -49,12 +48,10 @@ const Layout = ({ children }) => {
         paddingTop: 0,
       }}
     >
-      <main className="p-2" style={{
-        maxWidth: `2000px`
-      }}
-      >{children}</main>
+      <main className="p-2" style={{ maxWidth: `2000px` }}>
+        {children}
+      </main>
     </div>
-    <ConsentBanner />
   </>);
 }
 
