@@ -45,7 +45,7 @@ const til = ({ data }) => {
 
 export const tilQuery = graphql`
 query TilQuery {
-  allMarkdownRemark(limit: 3, sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/til/"}, frontmatter: {published: {eq: true}}}) {
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/til/"}, frontmatter: {published: {eq: true}}}) {
     totalCount
     edges {
       node {

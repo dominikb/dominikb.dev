@@ -53,7 +53,7 @@ const IndexPage = ({ data }) => {
             )
           })}
           <div className="mt-4 text-center">
-            <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+            <Link to={`/${nextPage}`} rel="next" style={{ textDecoration: `none` }}>
               <span className="text-dark">Next Page →</span>
             </Link>
           </div>
@@ -65,20 +65,7 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
 query IndexQuery {
-  site {
-    siteMetadata {
-      title
-      author
-      labels {
-        tag
-        tech
-        name
-        size
-        color
-      }
-    }
-  }
-  allMarkdownRemark(limit: 3, sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/blog/"}, frontmatter: {published: {eq: true}}}) {
+  allMarkdownRemark(limit: 3, sort: {fields: [frontmatter___date], order: DESC}, filter: { frontmatter: {published: {eq: true}}}) {
     totalCount
     edges {
       node {

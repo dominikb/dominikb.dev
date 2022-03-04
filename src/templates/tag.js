@@ -11,7 +11,6 @@ import TechTag from "../components/tags/TechTag"
 
 const Tag = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
-  const labels = data.site.siteMetadata.labels
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${totalCount > 1 ? "s" : ""

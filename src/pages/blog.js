@@ -8,13 +8,13 @@ import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
-const ArchivePage = ({ data }) => {
+const BlogPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
       <SEO
-        title="Archive"
+        title="Blog"
         keywords={[
           `gatsby`,
           `javascript`,
@@ -29,7 +29,7 @@ const ArchivePage = ({ data }) => {
           <Sidebar />
         </div>
         <div className="post-list-main">
-          <h2 className="heading mt-3">All Posts</h2>
+          <h2 className="heading mt-3">Blog Posts</h2>
           {posts.map(post => {
             const tags = post.node.frontmatter.tags
             return (
@@ -57,24 +57,11 @@ const ArchivePage = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query ArchiveQuery {
-    site {
-      siteMetadata {
-        title
-        author
-        labels {
-          tag
-          tech
-          name
-          size
-          color
-        }
-      }
-    }
+  query BlogPostsQuery {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { eq: true } } }
+      filter: { fileAbsolutePath: {regex: "/blog/"}, frontmatter: { published: { eq: true } } }
     ) {
       totalCount
       edges {
@@ -96,4 +83,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default ArchivePage
+export default BlogPage

@@ -51,9 +51,9 @@ const Sidebar = () => {
                         <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline} />
                         <SocialLinks contacts={data.site.siteMetadata.contacts} />
                         <div className="page-links">
-                            <Link to="/"><span className="text-dark d-block py-1">Blog</span></Link>
-                            <Link to="/til"><span className="text-dark d-block py-1">TIL</span></Link>
-                            <Link to="/archive"><span className="text-dark d-block py-1">Archive</span></Link>
+                            <Link to="/"><span className="text-dark d-block py-1">All Posts</span></Link>
+                            <Link to="/til"><span className="text-dark d-block py-1">Today I Learned (TIL)</span></Link>
+                            <Link to="/blog"><span className="text-dark d-block py-1">Blog</span></Link>
                         </div>
                         <div className="tech-tags mt-4">
                             {data.site.siteMetadata.labels.map(label => <TechTag key={label.tag} tag={label.tag} />)}
