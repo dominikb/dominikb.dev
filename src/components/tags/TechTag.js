@@ -35,7 +35,7 @@ const TechTag = (args) => {
     let icon;
     if (/^Fa/.test(name)) icon = React.createElement(FontAwesome[name]);
     if (/^Si/.test(name)) icon = React.createElement(SimpleIcon[name]);
-    if (/^Di/.test(name)) icon = React.createElement(Devicons[name])
+    if (/^Di/.test(name)) icon = React.createElement(Devicons[name]);
 
     return (
         <div className="d-inline-block p-1">

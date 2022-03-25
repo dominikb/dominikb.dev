@@ -55,6 +55,27 @@ module.exports = {
       name: "SiRubyonrails",
       color: "#d30001",
       size: 20,
+    },
+    {
+      tag: "java",
+      tech: "Java",
+      name: "FaJava",
+      color: "#df0000",
+      size: 20,
+    },
+    {
+      tag: "spring",
+      tech: "Spring",
+      name: "SiSpring",
+      color: "#6db33f",
+      size: 20,
+    },
+    {
+      tag: "spring-boot",
+      tech: "Spring Boot",
+      name: "SiSpringboot",
+      color: "#6db33f",
+      size: 20,
     }
   ],
 }

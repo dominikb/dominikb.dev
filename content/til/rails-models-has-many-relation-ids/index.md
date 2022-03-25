@@ -1,5 +1,5 @@
 ---
-title: 'About automatically generated methods for has_many relations'
+title: 'About generated methods for has_many relations'
 tags: ["rails", "ruby",]
 published: true
 date: '2022-03-04'
