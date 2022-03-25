@@ -7,7 +7,7 @@ date: '2018-12-07'
 
 During the last few months, I’ve read a lot of blog posts and guides that talk about the benefits and joys of TDD.
 
-Although they all were credible sources and I believed the points they made about all the benefits you when applying this style of development, I just could not quite get myself to try it out.
+Although they all were credible sources and I believed the points they made about all the benefits you get when applying this style of development, I just could not quite get myself to try it out.
 
 The biggest hurdle for me seemed, that there were no clear instructions on how to get started.
 
