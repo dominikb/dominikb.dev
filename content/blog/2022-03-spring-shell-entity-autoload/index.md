@@ -1,5 +1,5 @@
 ---
-title: 'Autoloading entites in Spring Shell commands'
+title: 'Autoloading entities in Spring Shell commands'
 tags: ["java", "spring", "spring-boot"]
 published: true
 date: '2022-03-25'
@@ -84,7 +84,7 @@ public String bid(@ShellOption Article article,
 
 ## Troubles in paradise
 
-As it turns out problems with lazy-loading arised when trying to access related entites. My first thought was to slap a `@Transactional()` annotation onto the command method but this did not resolve the lazy-loading errors.
+As it turns out problems with lazy-loading arised when trying to access related entities. My first thought was to slap a `@Transactional()` annotation onto the command method but this did not resolve the lazy-loading errors.
 
 The reason for this was that entities loaded by a converter were not attached to an `EntityManager` and thus the relation proxy could not execute the lazy-loading query.
 
