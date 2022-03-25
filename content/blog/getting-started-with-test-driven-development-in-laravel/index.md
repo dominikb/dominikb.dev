@@ -223,5 +223,5 @@ When implementing new features, write tests, that describe your implementation, 
 
 ### Links
 
-https://laravel.com/docs/5.7/testing
-https://phpunit.de/
+- https://laravel.com/docs/5.7/testing
+- https://phpunit.de/
