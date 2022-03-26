@@ -3,6 +3,9 @@ title: 'CommandLineRunners in Spring Shell'
 tags: ["java", "spring", "spring-boot"]
 published: true
 date: '2022-03-25'
+excerpt: |
+  Spring Shell uses a CommandLineRunner blocking the main thread in order to run the interactive communication with the user. Other CommandLineRunners without any defined @Order or a lower priority,
+  will not be executed before...
 ---
 
 Spring Shell uses a `CommandLineRunner` blocking the main thread in order to run the interactive communication with the user.

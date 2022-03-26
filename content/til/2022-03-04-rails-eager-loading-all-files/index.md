@@ -3,6 +3,9 @@ title: 'How to eager load files with Rails'
 tags: ["rails", "ruby",]
 published: true
 date: '2022-03-04'
+excerpt: |
+  Eager loading increases performance and thus is useful in production environments.
+  But this conditional behaviour can also lead to works-on-my-machine moments.
 ---
 
 Once, I wrote some code that read similar to this:

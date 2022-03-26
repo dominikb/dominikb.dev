@@ -48,7 +48,7 @@ const Tag = ({ pageContext, data }) => {
                 <small className="d-block text-info">
                   Posted on {post.node.frontmatter.date}
                 </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
+                <p className="mt-3 d-inline">{post.node.frontmatter.excerpt || post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
@@ -114,6 +114,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM, YYYY")
             tags
+            excerpt
           }
           fields {
             slug
