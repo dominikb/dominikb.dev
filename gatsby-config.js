@@ -65,15 +65,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Raleway`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
-        ]
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -88,29 +79,5 @@ module.exports = {
         icon: `src/images/dominik-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: '', // leave empty if you want to disable the tracker
-          cookieName: 'g-analytics', // default
-          anonymize: true // default
-        },
-        googleTagManager: {
-          trackingId: '', // leave empty if you want to disable the tracker
-          cookieName: 'g-tagmanager', // default
-          dataLayerName: 'dataLayer', // default
-        },
-        facebookPixel: {
-          pixelId: '', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-facebook-pixel', // default
-        },
-        // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development']
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
